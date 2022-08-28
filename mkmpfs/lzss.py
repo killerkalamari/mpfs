@@ -17,12 +17,12 @@
 
 LZSS_WINDOW_SIZE = 1024
 LZSS_MIN_SEQ_LEN = 4
+LZSS_MAX_SEQ_LEN = 65536 / LZSS_WINDOW_SIZE + LZSS_MIN_SEQ_LEN - 2
 LZSS_SEQUENCE_INDICATOR = -1
 
 def compress(data_in: list[int]) -> list[int]:
 	data_out: list[int] = []
 	window: list[int] = [0] * LZSS_WINDOW_SIZE
-
 	i = 0
 	while i < len(data_in):
 		current_offset = best_offset = -1
@@ -43,8 +43,10 @@ def compress(data_in: list[int]) -> list[int]:
 				# 1) End of input data
 				# 2) Data mismatch
 				# 3) Sequence too long
+				# 4) End of window data
 				if i2 >= len(data_in) or window[j] != data_in[i2] \
-						or (i2 - i) > 62 + LZSS_MIN_SEQ_LEN:
+						or i2 - i > LZSS_MAX_SEQ_LEN \
+						or j + 1 >= LZSS_WINDOW_SIZE:
 					current_length = j - current_offset
 					if current_length > best_length:
 						best_offset = current_offset
