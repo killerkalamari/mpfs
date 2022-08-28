@@ -10,11 +10,11 @@ file object and equivalents for several functions in os and os.path.
 
 ## Installation
 
-Run the following command to install mkmpfs: ```sudo ./install.sh```
+Run the following command to install ```mkmpfs```: ```sudo ./install.sh```
 
 Then, copy the ```mpfs.py``` module to the Casio calculator's USB storage.
 
-To uninstall mkmpfs, run ```sudo ./uninstall.sh```.
+To uninstall, run ```sudo ./uninstall.sh```.
 
 ## Build a file system
 
