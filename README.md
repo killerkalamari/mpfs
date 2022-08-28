@@ -3,10 +3,10 @@
 ## Rationale
 
 The MicroPython 1.9.4 implementation for Casio calculators does not currently
-provide a working open() call nor an os module. The `mpfs` module works around
+provide a working open() call nor os module. The `mpfs` module works around
 those limitations by mounting a transparently-compressed read-only file system
-that is accessible to user scripts and provides the most useful methods of the
-file object and equivalents of several functions in os and os.path.
+that is accessible to user scripts. It provides the most useful methods of the
+file object and equivalents for several functions in os and os.path.
 
 ## Installation
 
