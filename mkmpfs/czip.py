@@ -91,6 +91,8 @@ def to_python_str(data: list[int], reserved_extra: list[int]=[]):
     replacements: dict[int, list[int]] = {}
     reserved_new = reserved[:]
     for item in reserved:
+        if item >= 0 and dist[item] == 0:
+            continue
         while True:
             replacement = sorted_dist[sorted_i][0]
             sorted_i += 1
