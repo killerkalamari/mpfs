@@ -196,8 +196,8 @@ More information:
 - readline() -> str
 - readlines() -> list[str]
 - seek(offset: int, whence: int=mpfs.SEEK_SET) -> int
-- seek(offset: int, whence: int=mpfs.SEEK_CUR) -> int
-- seek(offset: int, whence: int=mpfs.SEEK_END) -> int
+- seek(offset: int, mpfs.SEEK_CUR) -> int
+- seek(offset: int, mpfs.SEEK_END) -> int
 - tell() -> int
 
 More information:
