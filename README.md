@@ -10,13 +10,13 @@ file object and equivalents for several functions in os and os.path.
 
 ## Installation
 
-Run the following command to install ```mkmpfs```: ```sudo ./install.sh```
+Run ```sudo ./install.sh``` to install ```mkmpfs```.
 
-Then, copy the ```mpfs.py``` module to the Casio calculator's USB storage.
+Next, copy the ```mpfs.py``` module to the Casio calculator's USB storage.
 
 To uninstall, run ```sudo ./uninstall.sh```.
 
-## Build a file system
+## Build and install a file system
 
 The ```mkmpfs``` program will compress the source files and build a file system.
 For example, to create a Python module named `test` with a file system
@@ -29,6 +29,9 @@ mkmpfs a.txt data/b.dat >test.py
 The file system does not support a directory structure. In the
 above command, data is read from `data/b.dat`, however the file will be
 named `b.dat` inside the file system.
+
+To install the file system module, copy ```test.py``` to the Casio 
+calculator's USB storage.
 
 ## Import mpfs
 
